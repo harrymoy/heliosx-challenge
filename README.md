@@ -1,30 +1,54 @@
-## Micronaut 4.7.1 Documentation
+# HeliosX Consultation API
 
-- [User Guide](https://docs.micronaut.io/4.7.1/guide/index.html)
-- [API Reference](https://docs.micronaut.io/4.7.1/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/4.7.1/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
+### Info on how to run:
 
----
+- Clone this repository
+- Navigate to Application.java
+- Run the main method
+- Import the postman-collection.json into Postman
+- Postman doesn't generate full body in the example for the POST request, here's a full example:
 
-- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-- [Micronaut Gradle Plugin documentation](https://micronaut-projects.github.io/micronaut-gradle-plugin/latest/)
-- [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
+``` json
+{
+    "userAge": {
+        "ageAnswer": "AGE",
+        "answer": true
+    },
+    "viagraAnswers": [
+        {
+            "answerType": "HIGH_BLOOD_PRESSURE",
+            "answer": false
+        },
+        {
+            "answerType": "LOW_BLOOD_PRESSURE",
+            "answer": false
+        },
+        {
+            "answerType": "AVOID_STRENUOUS_EXERCISE",
+            "answer": false
+        },
+        {
+            "answerType": "DIFFICULTY_IN_WALKING",
+            "answer": false
+        },
+        {
+            "answerType": "DEPRESSION",
+            "answer": null
+        },
+        {
+            "answerType": "VIAGRA_ALLERGY",
+            "answer": false
+        },
+        {
+            "answerType": "LISTED_PROBLEMS",
+            "answer": false
+        }
+    ]
+}
+```
 
-## Feature mockito documentation
+### Thoughts on API
 
-- [https://site.mockito.org](https://site.mockito.org)
-
-## Feature serialization-jackson documentation
-
-- [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
-
-## Feature assertj documentation
-
-- [https://assertj.github.io/doc/](https://assertj.github.io/doc/)
-
-## Feature micronaut-aot documentation
-
-- [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
-
-
+- There's some extensibility in place, but there could be more
+- Use generics for validating that all `MandatoryQuestion` are answered
+- Implement this validation in a custom validator method such as `@Mandatory` that can sit at the request level

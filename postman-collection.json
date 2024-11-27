@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "35d97c42-140a-4129-9677-581ed576d0bf",
+		"name": "Consultation API",
+		"description": "An API for getting consultation results\n\nContact Support:\n Name: Harry Moy\n Email: harrymoy@me.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30951932"
+	},
+	"item": [
+		{
+			"name": "consultation",
+			"item": [
+				{
+					"name": "viagra",
+					"item": [
+						{
+							"name": "get Health Consultation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/consultation/viagra",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"consultation",
+										"viagra"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getHealthConsultation 200 response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/consultation/viagra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"consultation",
+												"viagra"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"userAge\": {\n    \"ageQuestion\": \"AGE\",\n    \"question\": \"<string>\"\n  },\n  \"viagraQuestions\": [\n    {\n      \"question\": \"<string>\",\n      \"questionType\": \"DEPRESSION\"\n    },\n    {\n      \"question\": \"<string>\",\n      \"questionType\": \"DIFFICULTY_IN_WALKING\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "send Viagra Consultation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userAge\": {\n    \"ageAnswer\": \"AGE\",\n    \"answer\": \"<boolean>\"\n  },\n  \"viagraAnswers\": [\n    {\n      \"answer\": \"<boolean>\",\n      \"answerType\": \"DEPRESSION\"\n    },\n    {\n      \"answer\": \"<boolean>\",\n      \"answerType\": \"LOW_BLOOD_PRESSURE\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/consultation/viagra",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"consultation",
+										"viagra"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "sendViagraConsultation 200 response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAge\": {\n    \"ageAnswer\": \"AGE\",\n    \"answer\": \"<boolean>\"\n  },\n  \"viagraAnswers\": [\n    {\n      \"answer\": \"<boolean>\",\n      \"answerType\": \"DEPRESSION\"\n    },\n    {\n      \"answer\": \"<boolean>\",\n      \"answerType\": \"LOW_BLOOD_PRESSURE\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/consultation/viagra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"consultation",
+												"viagra"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"rejectionReasons\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"success\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
