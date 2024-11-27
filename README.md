@@ -52,3 +52,4 @@
 - There's some extensibility in place, but there could be more
 - Use generics for validating that all `MandatoryQuestion` are answered
 - Implement this validation in a custom validator method such as `@Mandatory` that can sit at the request level
+- There could be a `ConsultationType` that's included as a query parameter or path variable that fetches the consultation questions
