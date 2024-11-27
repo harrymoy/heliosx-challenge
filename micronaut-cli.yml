@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.heliosx
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ app-name, assertj, gradle, http-client-test, java, java-application, junit, logback, micronaut-aot, micronaut-build, micronaut-http-validation, mockito, netty-server, properties, readme, serialization-jackson, shade, static-resources ]
